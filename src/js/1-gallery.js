@@ -72,6 +72,11 @@ const images = [
 const head = document.querySelector('h1');
 head.remove();
 
+const section = document.querySelector('section');
+section.classList.add('section');
+const homeLink = document.querySelector('a');
+homeLink.classList.add('to-home-link');
+
 const gallery = document.querySelector('.gallery');
 
 const imgGallery = images
@@ -97,3 +102,26 @@ const lightbox = new SimpleLightbox('.gallery a', {
   captionDelay: '250ms',
   captionsData: 'alt',
 });
+
+/* --- Google Font --- */
+
+function loadGoogleFonts() {
+  const linkGoogle = document.createElement('link');
+  linkGoogle.rel = 'preconnect';
+  linkGoogle.href = 'https://fonts.googleapis.com';
+  document.head.appendChild(linkGoogle);
+
+  const linkGstatic = document.createElement('link');
+  linkGstatic.rel = 'preconnect';
+  linkGstatic.href = 'https://fonts.gstatic.com';
+  linkGstatic.crossOrigin = 'anonymous';
+  document.head.appendChild(linkGstatic);
+
+  const linkFont = document.createElement('link');
+  linkFont.rel = 'stylesheet';
+  linkFont.href =
+    'https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap';
+  document.head.appendChild(linkFont);
+}
+
+document.addEventListener('DOMContentLoaded', loadGoogleFonts);
