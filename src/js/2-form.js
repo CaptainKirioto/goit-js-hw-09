@@ -28,8 +28,8 @@ form.addEventListener('submit', handleSubmit);
 
 function handleSubmit(event) {
   event.preventDefault();
-  if (input.value == '' || textarea.value == '') {
-    alert('Fill please all fields');
+  if (input.value === '' || textarea.value === '') {
+    alert('Please fill in all the fields');
   } else {
     console.log(formData);
     localStorage.removeItem('feedback-form-state');
@@ -42,6 +42,7 @@ if (localStorageData) {
   const savedData = JSON.parse(localStorageData);
   input.value = savedData.email;
   textarea.value = savedData.message;
+  Object.assign(formData, savedData);
 }
 
 //   formData.email = event.target.elements.email.value;
