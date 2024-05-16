@@ -23,3 +23,39 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin-top: 50px;
+  /* background-color: plum; */
+}
+
+/* ------------ GALLERY ------------ */
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  gap: 24px;
+  width: 1500px;
+  margin: 0 auto;
+  padding: 24px 156px;
+  background-color: #fff;
+  border-radius: 20px;
+}
+
+.gallery-item {
+  width: ((100% - 48px) / 3);
+}
+
+.gallery-item:hover {
+  transform: scale(1.04);
+}
+
+.sl-wrapper.simple-lightbox {
+  background-color: rgba(46, 47, 66, 0.8);
+}
